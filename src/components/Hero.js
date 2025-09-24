@@ -2,42 +2,43 @@ import React from "react";
 
 function Hero() {
   const heroStyle = {
-    height: "100vh",
+    minHeight: "100vh",
     display: "flex",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     color: "#fff",
     textAlign: "left",
     padding: "20px",
-    position: "relative",
-    overflow: "hidden",
-    background: "linear-gradient(135deg, #667eea, #764ba2)"
+    background: "linear-gradient(135deg, #667eea, #764ba2)",
+    flexWrap: "wrap" // allows content to wrap on smaller screens
   };
 
   const contentStyle = {
-    flex: 1,
+    flex: "1 1 400px",
     padding: "20px",
-    maxWidth: "600px"
+    maxWidth: "600px",
+    minWidth: "300px"
   };
 
   const imageStyle = {
-    flex: 1,
-    maxWidth: "300px",
+    flex: "1 1 300px",
+    maxWidth: "400px",
+    width: "100%",
     borderRadius: "50%",
     boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
     animation: "fadeInImage 2s ease"
   };
 
   const titleStyle = {
-    fontSize: "48px",
+    fontSize: "3rem",
     margin: "10px",
     fontWeight: "bold",
-    textShadow: "2px 2px 15px rgba(0,0,0,0.3)",
-    animation: "zoomIn 1s ease"
+    textShadow: "2px 2px 15px rgba(0,0,0,0.3)"
   };
 
   const subtitleStyle = {
-    fontSize: "22px",
+    fontSize: "1.2rem",
     margin: "10px",
     color: "#e0e0e0",
     lineHeight: "1.6"
@@ -51,7 +52,7 @@ function Hero() {
     borderRadius: "50px",
     cursor: "pointer",
     marginTop: "20px",
-    fontSize: "18px",
+    fontSize: "1rem",
     transition: "transform 0.3s, box-shadow 0.3s",
     textDecoration: "none",
     boxShadow: "0 4px 15px rgba(0,0,0,0.2)"
@@ -65,7 +66,7 @@ function Hero() {
 
   return (
     <section id="hero" style={heroStyle}>
-      <div style={{ display: "flex", alignItems: "center", gap: "40px" }}>
+      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "40px" }}>
         {/* Content */}
         <div style={contentStyle}>
           <h1 style={titleStyle}>👋 Hello, I'm Inayath Arifa</h1>
@@ -87,9 +88,9 @@ function Hero() {
         </div>
 
         {/* Profile Image */}
-        <div>
+        <div style={{ flex: "1 1 300px", textAlign: "center" }}>
           <img
-            src="inayath-pic.jpg" // Put your picture path here
+            src="inayath-pic.jpg"
             alt="Inayath Arifa"
             style={imageStyle}
           />
@@ -98,13 +99,24 @@ function Hero() {
 
       {/* CSS Animations */}
       <style>{`
-        @keyframes zoomIn {
-          0% { transform: scale(0.9); opacity: 0; }
-          100% { transform: scale(1); opacity: 1; }
-        }
         @keyframes fadeInImage {
           0% { opacity: 0; transform: translateX(20px); }
           100% { opacity: 1; transform: translateX(0); }
+        }
+        @media (max-width: 768px) {
+          section {
+            flex-direction: column;
+            text-align: center !important;
+          }
+          h1 {
+            font-size: 2.2rem !important;
+          }
+          p {
+            font-size: 1rem !important;
+          }
+          img {
+            max-width: 250px !important;
+          }
         }
       `}</style>
     </section>
