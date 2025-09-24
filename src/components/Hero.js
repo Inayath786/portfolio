@@ -105,7 +105,7 @@ const containerStyle= {
         {/* Image */}
         <div style={imageContainerStyle}>
           <img
-            src="inayath-pic.jpg" // Replace with your picture path
+            src="inayath-pic3.jpg" // Replace with your picture path
             alt="Inayath Arifa"
             style={imageStyle}
           />
