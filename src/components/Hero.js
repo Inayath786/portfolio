@@ -12,15 +12,17 @@ function Hero() {
     background: "linear-gradient(135deg, #667eea, #764ba2)"
   };
 
-  const containerStyle = {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    maxWidth: "1200px",
-    width: "100%",
-    justifyContent: "center"
-  };
+const containerStyle= {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "100%",
+  margin: "0 auto", // center content without extra spacing
+  overflow: "hidden" // prevent extra scroll
+}
+
 
   const contentStyle = {
     flex: "1 1 400px",

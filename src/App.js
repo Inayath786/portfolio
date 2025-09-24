@@ -25,5 +25,24 @@ function App() {
     </div>
   );
 }
+   <style>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          overflow-x: hidden;
+        }
+        html, body {
+          width: 100%;
+        }
+        @media (max-width: 768px) {
+          section {
+            padding: 10px !important;
+          }
+        }
+      `}</style>
+
 
 export default App;
