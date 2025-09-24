@@ -4,30 +4,43 @@ function Hero() {
   const heroStyle = {
     minHeight: "100vh",
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column", // start stacked for mobile
     justifyContent: "center",
     alignItems: "center",
     color: "#fff",
-    textAlign: "left",
     padding: "20px",
-    background: "linear-gradient(135deg, #667eea, #764ba2)",
-    flexWrap: "wrap" // allows content to wrap on smaller screens
+    background: "linear-gradient(135deg, #667eea, #764ba2)"
+  };
+
+  const containerStyle = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    maxWidth: "1200px",
+    width: "100%",
+    justifyContent: "center"
   };
 
   const contentStyle = {
     flex: "1 1 400px",
     padding: "20px",
-    maxWidth: "600px",
-    minWidth: "300px"
+    maxWidth: "600px"
+  };
+
+  const imageContainerStyle = {
+    flex: "1 1 300px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "20px"
   };
 
   const imageStyle = {
-    flex: "1 1 300px",
-    maxWidth: "400px",
-    width: "100%",
+    maxWidth: "100%",
+    height: "auto",
     borderRadius: "50%",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
-    animation: "fadeInImage 2s ease"
+    boxShadow: "0 8px 20px rgba(0,0,0,0.3)"
   };
 
   const titleStyle = {
@@ -53,8 +66,8 @@ function Hero() {
     cursor: "pointer",
     marginTop: "20px",
     fontSize: "1rem",
-    transition: "transform 0.3s, box-shadow 0.3s",
     textDecoration: "none",
+    transition: "transform 0.3s, box-shadow 0.3s",
     boxShadow: "0 4px 15px rgba(0,0,0,0.2)"
   };
 
@@ -66,8 +79,8 @@ function Hero() {
 
   return (
     <section id="hero" style={heroStyle}>
-      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "40px" }}>
-        {/* Content */}
+      <div style={containerStyle}>
+        {/* Text Content */}
         <div style={contentStyle}>
           <h1 style={titleStyle}>👋 Hello, I'm Inayath Arifa</h1>
           <p style={subtitleStyle}>
@@ -87,26 +100,24 @@ function Hero() {
           </div>
         </div>
 
-        {/* Profile Image */}
-        <div style={{ flex: "1 1 300px", textAlign: "center" }}>
+        {/* Image */}
+        <div style={imageContainerStyle}>
           <img
-            src="inayath-pic.jpg"
+            src="inayath-pic.jpg" // Replace with your picture path
             alt="Inayath Arifa"
             style={imageStyle}
           />
         </div>
       </div>
 
-      {/* CSS Animations */}
+      {/* Responsive CSS */}
       <style>{`
-        @keyframes fadeInImage {
-          0% { opacity: 0; transform: translateX(20px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
         @media (max-width: 768px) {
           section {
-            flex-direction: column;
-            text-align: center !important;
+            text-align: center;
+          }
+          div[style*="flex-direction: row"] {
+            flex-direction: column !important;
           }
           h1 {
             font-size: 2.2rem !important;
