@@ -39,8 +39,8 @@ const containerStyle= {
   };
 
   const imageStyle = {
-    maxWidth: "100%",
-    height: "auto",
+    Width: "50px",
+    height: "400px",
     borderRadius: "50%",
     boxShadow: "0 8px 20px rgba(0,0,0,0.3)"
   };
