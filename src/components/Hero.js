@@ -105,7 +105,7 @@ function Hero() {
       <div style={containerStyle}>
         {/* Text Content */}
         <div style={contentStyle}>
-          <h1 style={titleStyle}>👋 Hello, </h1>
+          <h1 style={titleStyle}>👋 Hello,I am Inayath </h1>
           <p style={subtitleStyle}>
             I’m a passionate <strong>Full Stack Developer</strong> skilled in building scalable web applications, cloud architectures, <strong>AWS DevOps,</strong> and <strong>system design 🚀</strong>.
           </p>
