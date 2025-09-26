@@ -105,12 +105,12 @@ function Hero() {
       <div style={containerStyle}>
         {/* Text Content */}
         <div style={contentStyle}>
-          <h1 style={titleStyle}>👋 Hello, I'm Samyukta</h1>
+          <h1 style={titleStyle}>👋 Hello, </h1>
           <p style={subtitleStyle}>
-            I’m  passionate in <strong>Embedded Systems</strong> skilled in ARM and C 
+            I’m a passionate <strong>Full Stack Developer</strong> skilled in building scalable web applications, cloud architectures, <strong>AWS DevOps,</strong> and <strong>system design 🚀</strong>.
           </p>
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
-            {/* <a
+            <a
               href="#projects"
               style={buttonStyle}
               onMouseEnter={(e) => {
@@ -123,10 +123,10 @@ function Hero() {
               }}
             >
               💻 View My Work
-            </a> */}
+            </a>
             <a
-              href="/samyukta-resume.pdf"
-              download="Samyukta_Resume.pdf"
+              href="/inayath-resume.pdf"
+              download="Inayath_Resume.pdf"
               style={resumeButtonStyle}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.08)";
@@ -145,8 +145,8 @@ function Hero() {
         {/* Image */}
         <div style={imageContainerStyle}>
           <img
-            src="samyukta.jpg"
-            alt="Samyukta"
+            src="inayath-pic.jpg"
+            alt="Inayath"
             style={imageStyle}
             onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05) translateY(-5px)"}
             onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}

@@ -18,7 +18,7 @@ function Contact() {
   };
 
   const handleSendMessage = () => {
-    const email = "tpsrani2003@gmail.com";
+    const email = "inayatharifa@gmail.com";
     const subject = encodeURIComponent("Contact From Portfolio");
     const body = encodeURIComponent("Hello, I would like to connect with you.");
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;

@@ -6,7 +6,8 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contacts";
 import Footer from "./components/Footer";
 import Certifications from "./components/certifications";
-
+import Projects from "./components/Projects";
+import Links from "./components/Links";
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Links/>
       <Skills />
       <Certifications/>
+      <Projects/>
       <Contact />
       <Footer />
     </div>
