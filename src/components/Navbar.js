@@ -30,8 +30,6 @@ function Navbar() {
         <li><a style={linkStyle} href="#hero">Home</a></li>
         <li><a style={linkStyle} href="#about">About</a></li>
         <li><a style={linkStyle} href="#skills">Skills</a></li>
-        <li><a style={linkStyle} href="#projects">Projects</a></li>
-        <li><a style={linkStyle} href="#contact">Contact</a></li>
       </ul>
     </nav>
   );
