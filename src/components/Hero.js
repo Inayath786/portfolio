@@ -1,33 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Hero() {
   const heroStyle = {
     minHeight: "100vh",
     display: "flex",
-    flexDirection: "column", // start stacked for mobile
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     color: "#fff",
-    padding: "20px",
-    background: "linear-gradient(135deg, #667eea, #764ba2)"
+    padding: "40px 20px",
+    background: "linear-gradient(270deg, #667eea, #764ba2, #ff6b6b)",
+    backgroundSize: "600% 600%",
+    animation: "gradientBG 15s ease infinite",
+    position: "relative",
+    overflow: "hidden",
+    textAlign: "center"
   };
 
-const containerStyle= {
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "100%",
-  margin: "0 auto", // center content without extra spacing
-  overflow: "hidden" // prevent extra scroll
-}
-
+  const containerStyle = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    margin: "0 auto",
+    maxWidth: "1200px",
+    gap: "40px",
+    padding: "30px",
+    borderRadius: "25px",
+    background: "rgba(255, 255, 255, 0.05)",
+    backdropFilter: "blur(10px)",
+    boxShadow: "0 15px 40px rgba(0,0,0,0.4)",
+    transition: "transform 0.3s ease"
+  };
 
   const contentStyle = {
     flex: "1 1 400px",
     padding: "20px",
-    maxWidth: "600px"
+    maxWidth: "600px",
+    animation: "fadeInUp 1.2s ease forwards"
   };
 
   const imageContainerStyle = {
@@ -35,42 +47,51 @@ const containerStyle= {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "20px"
+    padding: "20px",
+    animation: "fadeInRight 1.2s ease forwards"
   };
 
   const imageStyle = {
-    Width: "50px",
-    height: "400px",
-    borderRadius: "50%",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.3)"
+    width: "320px",
+    height: "420px",
+    borderRadius: "30px",
+    objectFit: "cover",
+    boxShadow: "0 15px 35px rgba(0,0,0,0.5)",
+    transition: "transform 0.5s ease, box-shadow 0.5s ease"
   };
 
   const titleStyle = {
     fontSize: "3rem",
-    margin: "10px",
-    fontWeight: "bold",
-    textShadow: "2px 2px 15px rgba(0,0,0,0.3)"
+    margin: "10px 0",
+    fontWeight: "900",
+    textShadow: "2px 2px 20px rgba(0,0,0,0.6)",
+    lineHeight: "1.2",
+    background: "linear-gradient(90deg, #ff6b6b, #1e90ff, #00d4ff)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent"
   };
 
   const subtitleStyle = {
-    fontSize: "1.2rem",
-    margin: "10px",
-    color: "#e0e0e0",
-    lineHeight: "1.6"
+    fontSize: "1.3rem",
+    margin: "10px 0",
+    color: "#f0f0f0",
+    lineHeight: "1.6",
+    maxWidth: "500px",
+    fontStyle: "italic"
   };
 
   const buttonStyle = {
-    padding: "12px 24px",
+    padding: "14px 28px",
     background: "#ff6b6b",
     color: "#fff",
     border: "none",
     borderRadius: "50px",
     cursor: "pointer",
     marginTop: "20px",
-    fontSize: "1rem",
+    fontSize: "1.1rem",
     textDecoration: "none",
-    transition: "transform 0.3s, box-shadow 0.3s",
-    boxShadow: "0 4px 15px rgba(0,0,0,0.2)"
+    transition: "transform 0.3s, box-shadow 0.3s, background 0.3s",
+    boxShadow: "0 6px 20px rgba(0,0,0,0.3)"
   };
 
   const resumeButtonStyle = {
@@ -88,15 +109,34 @@ const containerStyle= {
           <p style={subtitleStyle}>
             I’m a passionate <strong>Full Stack Developer</strong> skilled in building scalable web applications, cloud architectures, AWS DevOps, and system design 🚀.
           </p>
-          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            <a href="#projects" style={buttonStyle}
-               onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
-               onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
+            <a
+              href="#projects"
+              style={buttonStyle}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.08)";
+                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.5)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.3)";
+              }}
+            >
               💻 View My Work
             </a>
-            <a href="/inayath-resume.pdf" download="Inayath_Resume.pdf" style={resumeButtonStyle}
-               onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
-               onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+            <a
+              href="/inayath-resume.pdf"
+              download="Inayath_Resume.pdf"
+              style={resumeButtonStyle}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.08)";
+                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.5)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.3)";
+              }}
+            >
               📄 Download Resume
             </a>
           </div>
@@ -105,33 +145,35 @@ const containerStyle= {
         {/* Image */}
         <div style={imageContainerStyle}>
           <img
-            src="inayath-pic3.jpg" // Replace with your picture path
+            src="inayath-pic3.jpg"
             alt="Inayath Arifa"
             style={imageStyle}
+            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05) translateY(-5px)"}
+            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
           />
         </div>
       </div>
 
-      {/* Responsive CSS */}
-      <style>{`
-        @media (max-width: 768px) {
-          section {
-            text-align: center;
+      {/* Inline animation for gradient background */}
+      <style>
+        {`
+          @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
           }
-          div[style*="flex-direction: row"] {
-            flex-direction: column !important;
+
+          @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
           }
-          h1 {
-            font-size: 2.2rem !important;
+
+          @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(20px); }
+            100% { opacity: 1; transform: translateX(0); }
           }
-          p {
-            font-size: 1rem !important;
-          }
-          img {
-            max-width: 250px !important;
-          }
-        }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 }
