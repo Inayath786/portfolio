@@ -24,16 +24,12 @@ function Skills() {
     <section id="skills" style={skillsStyle}>
       <h2 style={headingStyle}>💡 Skills</h2>
       <ul style={listStyle}>
-        <li style={itemStyle}>⚛ React.js</li>
-        <li style={itemStyle}>🖥 Node.js, Express.js</li>
-        <li style={itemStyle}>📦 MongoDB</li>
-        <li style={itemStyle}>☁ AWS (EC2, S3, Lambda)</li>
-        <li style={itemStyle}>🐙 Git, GitHub</li>
-        <li style={itemStyle}>🌍⚙️ Terraform</li>
-        <li style={itemStyle}>👷‍♂️🤖 Jenkins</li>
-        <li style={itemStyle}>🐳📦 Docker</li>
-        <li style={itemStyle}>☸️🧭 Kubernetes</li>
-        <li style={itemStyle}>🏗️🧩 System Designing</li>
+        <li style={itemStyle}>Embedded Systems</li>
+        <li style={itemStyle}>C Programming </li>
+        <li style={itemStyle}>ARM</li>
+        <li style={itemStyle}>Problem Solving</li>
+        <li style={itemStyle}>Communication Skills</li>
+      
       </ul>
     </section>
   );
